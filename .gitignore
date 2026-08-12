@@ -1,0 +1,22 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Robot Framework results
+output/
+log.html
+report.html
+output.xml
+results/
+
+# Allure
+allure-results/
+allure-report/
+
+# Node / Playwright browsers
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db

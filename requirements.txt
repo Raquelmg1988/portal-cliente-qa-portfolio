@@ -1,0 +1,7 @@
+robotframework==7.0.1
+robotframework-browser==18.3.0
+robotframework-pythonlibcore==4.4.1
+robotframework-stacktrace==0.4.1
+allure-robotframework==2.13.5
+playwright==1.44.0
+faker==40.23.0

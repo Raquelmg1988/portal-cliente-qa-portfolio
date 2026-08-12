@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Alterar Senha — Portal do Cliente</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <span class="brand">Aurora Serviços</span>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="cadastro.html" data-testid="menu-cadastro">Cadastro de Cliente</a>
+      <a href="cotacoes.html" data-testid="menu-cotacoes">Cotações</a>
+      <a href="pedidos.html" data-testid="menu-pedidos">Pedidos</a>
+      <a href="senha.html" class="active" data-testid="menu-senha">Alterar Senha</a>
+      <button class="logout-btn" id="logout-btn" data-testid="logout-btn">Sair</button>
+    </nav>
+  </header>
+
+  <main class="page">
+    <div class="card">
+      <h1>Alterar Senha</h1>
+      <p>A nova senha deve ter ao menos 8 caracteres, uma letra maiúscula, um número e um caractere especial.</p>
+
+      <form id="senha-form" novalidate>
+        <label for="senha-atual">Senha atual</label>
+        <input type="password" id="senha-atual" data-testid="senha-atual" required>
+
+        <label for="senha-nova">Nova senha</label>
+        <input type="password" id="senha-nova" data-testid="senha-nova" required>
+
+        <label for="senha-confirma">Confirmar nova senha</label>
+        <input type="password" id="senha-confirma" data-testid="senha-confirma" required>
+
+        <button type="submit" data-testid="senha-submit">Salvar nova senha</button>
+
+        <p class="error" id="senha-error" data-testid="senha-error" hidden></p>
+        <p class="success" id="senha-success" data-testid="senha-success" hidden>Senha alterada com sucesso!</p>
+      </form>
+    </div>
+  </main>
+
+  <script src="js/db.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/senha.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Aurora Serviços — Portal do Cliente</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="auth-card">
+    <h1>Portal do Cliente</h1>
+    <p class="subtitle">Aurora Serviços (empresa fictícia — projeto de portfólio)</p>
+
+    <form id="login-form" novalidate>
+      <label for="email">E-mail</label>
+      <input type="email" id="email" data-testid="login-email" required>
+
+      <label for="senha">Senha</label>
+      <input type="password" id="senha" data-testid="login-senha" required>
+
+      <button type="submit" data-testid="login-submit">Entrar</button>
+
+      <p class="error" id="login-error" data-testid="login-error" hidden></p>
+    </form>
+
+    <p class="hint">
+      Usuário de demonstração: <code>demo@aurora-servicos.com.br</code> / <code>Demo@123</code>
+    </p>
+  </main>
+
+  <script src="js/db.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>

@@ -78,6 +78,10 @@ Além da automação, este repositório inclui um exemplo de documentação de Q
 
 > Documento com dados fictícios, elaborado para demonstrar a estrutura de uma GMUD (escopo, riscos, cutover, rollback, hypercare) — não corresponde a uma tela específica da aplicação fake deste repositório.
 
+👉 **[Reaproveitamento de sessão autenticada entre testes](docs/sessao-autenticada.md)**
+
+> Explica a técnica de Suite Setup/Teardown já usada em `tests/cotacoes/` e `tests/pedidos/` para autenticar uma vez por suíte em vez de repetir login em cada caso de teste.
+
 ## Licença
 
 Projeto de portfólio, livre para consulta e estudo.

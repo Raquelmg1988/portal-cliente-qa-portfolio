@@ -82,10 +82,6 @@ Além da automação, este repositório inclui um exemplo de documentação de Q
 
 > Explica a técnica de Suite Setup/Teardown já usada em `tests/cotacoes/` e `tests/pedidos/` para autenticar uma vez por suíte em vez de repetir login em cada caso de teste.
 
-👉 **[Validação semântica com "LLM como juiz"](docs/llm-como-juiz.md)**
-
-> Exemplo funcional de como validar respostas em linguagem natural (ex: chatbot com IA generativa) sem depender de assert de texto exato. Roda em modo simulado, sem precisar de nenhuma API externa — ver `tests/llm_judge/`.
-
 ## Licença
 
 Projeto de portfólio, livre para consulta e estudo.

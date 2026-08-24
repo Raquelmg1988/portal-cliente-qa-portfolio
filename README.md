@@ -70,6 +70,14 @@ O relatório padrão do Robot Framework é gerado em `output/report.html` e `out
 | E-mail | `demo@aurora-servicos.com.br`   |
 | Senha  | `Demo@123`                       |
 
+## Documentação de processo
+
+Além da automação, este repositório inclui um exemplo de documentação de QA usada em processos reais de mudança (GMUD):
+
+👉 **[GMUD — Ajustes na aba Acessos (exemplo ilustrativo)](docs/GMUD-acessos.md)**
+
+> Documento com dados fictícios, elaborado para demonstrar a estrutura de uma GMUD (escopo, riscos, cutover, rollback, hypercare) — não corresponde a uma tela específica da aplicação fake deste repositório.
+
 ## Licença
 
 Projeto de portfólio, livre para consulta e estudo.

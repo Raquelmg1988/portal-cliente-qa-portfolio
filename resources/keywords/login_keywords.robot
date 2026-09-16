@@ -11,21 +11,30 @@ Resource    common_keywords.robot
 Fazer Login Com Credenciais Validas
 
     Abrir Navegador Na Pagina De Login
-
-    Fill Text    ${LOGIN_EMAIL}    ${USUARIO_EMAIL}
-    Fill Text    ${LOGIN_SENHA}    ${USUARIO_SENHA}
-    Click        ${LOGIN_SUBMIT}
-
-    Aguardar UI Livre
+    Fazer Login Com Credenciais    ${USUARIO_EMAIL}    ${USUARIO_SENHA}
 
 
 Fazer Login Com Credenciais Invalidas
 
     Abrir Navegador Na Pagina De Login
+    Fazer Login Com Credenciais    ${USUARIO_EMAIL}    ${USUARIO_SENHA_INVALIDA}
 
-    Fill Text    ${LOGIN_EMAIL}    ${USUARIO_EMAIL}
-    Fill Text    ${LOGIN_SENHA}    ${USUARIO_SENHA_INVALIDA}
+
+Fazer Login Com Credenciais
+    [Documentation]    Preenche e envia o formulário de login assumindo que a página de login já está aberta.
+    [Arguments]    ${email}    ${senha}
+
+    Fill Text    ${LOGIN_EMAIL}    ${email}
+    Fill Text    ${LOGIN_SENHA}    ${senha}
     Click        ${LOGIN_SUBMIT}
+
+    Aguardar UI Livre
+
+
+Fazer Logout
+
+    Click    ${LOGOUT_BTN}
+    Aguardar UI Livre
 
 
 Usuario Esta Logado

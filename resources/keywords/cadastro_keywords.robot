@@ -29,6 +29,16 @@ Confirmacao De Cadastro Deve Estar Visivel
 
 
 Cliente Deve Aparecer Na Listagem
-    [Arguments]    ${nome}
+    [Arguments]    ${nome}    ${email}    ${cpf}    ${telefone}
 
-    Get Text    ${TABELA_CLIENTES}    contains    ${nome}
+    ${conteudo}=    Get Text    ${TABELA_CLIENTES}
+    Should Contain    ${conteudo}    ${nome}
+    Should Contain    ${conteudo}    ${email}
+    Should Contain    ${conteudo}    ${cpf}
+    Should Contain    ${conteudo}    ${telefone}
+
+
+Quantidade De Linhas Na Tabela De Clientes Deve Ser
+    [Arguments]    ${quantidade}
+
+    Get Element Count    ${TABELA_CLIENTES} tbody tr    ==    ${quantidade}

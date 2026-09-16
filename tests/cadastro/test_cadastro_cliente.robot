@@ -7,9 +7,8 @@ Resource    ../../resources/keywords/login_keywords.robot
 Resource    ../../resources/keywords/cadastro_keywords.robot
 Resource    ../../resources/keywords/evidencias_keywords.robot
 
-Suite Setup       Fazer Login Com Credenciais Validas
-Suite Teardown    Fechar Navegador
-Test Teardown     Capturar Evidencia Se Falhar
+Test Setup        Fazer Login Com Credenciais Validas
+Test Teardown     Sequencia De Encerramento
 
 
 *** Test Cases ***
@@ -26,4 +25,13 @@ Cadastrar Novo Cliente Com Dados Fake Com Sucesso
     Cadastrar Novo Cliente    ${nome}    ${email}    ${cpf}    ${telefone}
 
     Confirmacao De Cadastro Deve Estar Visivel
-    Cliente Deve Aparecer Na Listagem    ${nome}
+    Cliente Deve Aparecer Na Listagem    ${nome}    ${email}    ${cpf}    ${telefone}
+    Quantidade De Linhas Na Tabela De Clientes Deve Ser    1
+
+
+*** Keywords ***
+
+Sequencia De Encerramento
+
+    Capturar Evidencia Se Falhar
+    Fechar Navegador

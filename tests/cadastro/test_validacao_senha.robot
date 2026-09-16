@@ -6,9 +6,13 @@ Resource    ../../resources/keywords/login_keywords.robot
 Resource    ../../resources/keywords/senha_keywords.robot
 Resource    ../../resources/keywords/evidencias_keywords.robot
 
-Suite Setup       Fazer Login Com Credenciais Validas
-Suite Teardown    Fechar Navegador
-Test Teardown     Capturar Evidencia Se Falhar
+Test Setup        Fazer Login Com Credenciais Validas
+Test Teardown     Sequencia De Encerramento
+
+Documentation     Casos negativos de alteração de senha. Nenhum destes cenários
+...               chega a persistir uma nova senha, então não há necessidade de
+...               restaurar estado no teardown. O caso de sucesso, que muda a
+...               senha do usuário, vive em test_alterar_senha.robot.
 
 
 *** Test Cases ***
@@ -31,10 +35,9 @@ Nao Deve Permitir Confirmacao De Senha Divergente
     Erro De Senha Deve Conter    não confere
 
 
-Deve Permitir Alterar Senha Com Dados Validos
+*** Keywords ***
 
-    Ir Para Alteracao De Senha
+Sequencia De Encerramento
 
-    Alterar Senha    ${USUARIO_SENHA}    NovaSenha@1    NovaSenha@1
-
-    Confirmacao De Senha Alterada Deve Estar Visivel
+    Capturar Evidencia Se Falhar
+    Fechar Navegador

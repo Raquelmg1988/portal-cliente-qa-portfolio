@@ -19,6 +19,12 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Set up Java (required by Allure commandline)
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
@@ -27,11 +33,17 @@ jobs:
       - name: Start fake client portal
         run: |
           python -m http.server 8000 --directory app &
-          sleep 2
+          timeout 30 bash -c 'until curl -sf http://127.0.0.1:8000/index.html > /dev/null; do sleep 1; done'
 
       - name: Run Robot Framework suite
         run: |
           robot --outputdir output --listener allure_robotframework:output/allure tests/
+
+      - name: Generate Allure report
+        if: always()
+        run: |
+          npm install -g allure-commandline --silent
+          allure generate output/allure --clean -o output/allure-report
 
       - name: Upload Robot report
         if: always()
